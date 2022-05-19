@@ -2,12 +2,19 @@
 #include <math.h>
 
 void askRowsAndColumns(int *rows, int *cols);
-void createMatrix(int rows, int cols, int *matrix);
+// void createMatrix(int rows, int cols, int *matrix);
 
 int main(void) {
-  int rows, cols, matrix;
+  int rows, cols;
   askRowsAndColumns(&rows, &cols);
-  createMatrix(rows, cols, &matrix);
+  // createMatrix(rows, cols, &matrix);
+  int matrix[rows][cols];
+  for (int row = 0; row < rows; row++) {
+    for (int col = 0; col < cols; col++) {
+      printf("Enter the value for A[%i][%i]: ", row+1, col+1);
+      scanf("%i", &matrix[row][col]);
+    }
+  }
   for (int row = 0; row < rows; row++) {
     for (int col = 0; col < cols; col++) {
       printf("%i ", matrix[row][col]);
@@ -25,11 +32,6 @@ void askRowsAndColumns(int *rows, int *cols) {
   scanf("%d", cols);
 }
 
-void createMatrix(int rows, int cols, int *matrix) {
-  for (int row = 0; row < rows; row++) {
-    for (int col = 0; col < cols; col++) {
-      printf("Enter the value for A[%i][%i]: ", row+1, col+1);
-      scanf("%d", matrix[row][col]);
-    }
-  }
-}
+// void createMatrix(int rows, int cols, int *matrix) {
+  
+// }
